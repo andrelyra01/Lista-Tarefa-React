@@ -23,28 +23,28 @@ localStorage.setItem("tasks", JSON.stringify(tasks))
 
 
 // quando criamos um useefect esssa função so e executada uma vez e ela so é executada quando o ususario termina de usar a aplicação
-useEffect(()  =>  {
-  const fetchTasks = async () => {
-    // CHAMOU A API
-    const response = await fetch('https://jsonplaceholder.typicode.com/users/1/todos?_limit=10',
-      {
-      method:"GET",
-    }
-  );
+// useEffect(()  =>  {
+//   const fetchTasks = async () => {
+//     // CHAMOU A API
+//     const response = await fetch('https://jsonplaceholder.typicode.com/users/1/todos?_limit=10',
+//       {
+//       method:"GET",
+//     }
+//   );
 
-  // PEGOU OS DADOS QUE A API RETORNA
-  const data = await response.json();
+//   // PEGOU OS DADOS QUE A API RETORNA
+//   const data = await response.json();
 
-  // ARMAZENAR/PERSISTIR ESSES DADOS NO STATE
-  setTasks(data)
+//   // ARMAZENAR/PERSISTIR ESSES DADOS NO STATE
+//   setTasks(data)
 
-  console.log(data)
+//   console.log(data)
    
-  };
+//   };
 
-// SE QUISE CHAMAR UMA API PARA PEGAR AS TAREFAS 
-  // fetchTasks()
-} ,[])
+// // SE QUISE CHAMAR UMA API PARA PEGAR AS TAREFAS 
+//    fetchTasks()
+// } ,[])
 
 
 // ATUALIZA O isCompleted DE CADA TAREFA ALTERA O ESTADO DE CADA TAREFA
